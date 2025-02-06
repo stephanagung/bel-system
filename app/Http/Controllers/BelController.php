@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\Panggilan;
 use Illuminate\Http\Request;
 use App\Models\Call;
 use Illuminate\Support\Facades\Log;
@@ -20,10 +21,11 @@ class BelController extends Controller
 
     public function startBel(Request $request)
     {
+
         // Validasi data input
         $validatedData = $request->validate([
             'jenis_pemanggilan' => 'required|string',
-            'nama_mesin' => 'required|string',
+            'nama_mesin'        => 'required|string',
         ]);
 
         try {
@@ -32,6 +34,22 @@ class BelController extends Controller
 
             // Simpan data ke database
             Call::create($validatedData);
+
+            $jenis = $request->input('jenis_pemanggilan');
+            $nama  = $request->input('nama_mesin');
+
+            if ($jenis === 'HRD') {
+                $pesanWhatsapp = "Perhatian! Panggilan kepada $nama dimohon untuk datang ke lobby, terima kasih.";
+            } else {
+                $pesanWhatsapp = "Perhatian! Panggilan kepada $jenis dimohon untuk datang ke $nama, terima kasih.";
+            }
+
+            // Trigger event pemanggilan
+            Panggilan::dispatch(
+                $request->input('jenis_pemanggilan'),
+                $request->input('nama_mesin'),
+                $pesanWhatsapp
+            );
 
             return response()->json(['message' => 'Pemanggilan berhasil dikirim.']);
         } catch (\Exception $e) {
