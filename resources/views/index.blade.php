@@ -114,6 +114,7 @@
                             <option value="Mesin 31">Mesin 31</option>
                             <option value="Mesin 32">Mesin 32</option>
                             <option value="Mesin 33">Mesin 33</option>
+                            <option value="Mesin 34">Mesin 34</option>
                         </select>
                     </div>
                     <input type="hidden" name="jenis_pemanggilan" value="Setter Produksi">
@@ -174,6 +175,7 @@
                             <option value="Mesin 31">Mesin 31</option>
                             <option value="Mesin 32">Mesin 32</option>
                             <option value="Mesin 33">Mesin 33</option>
+                            <option value="Mesin 34">Mesin 34</option>
                         </select>
                     </div>
                     <input type="hidden" name="jenis_pemanggilan" value="Leader Produksi">
@@ -235,6 +237,7 @@
                             <option value="Mesin 31">Mesin 31</option>
                             <option value="Mesin 32">Mesin 32</option>
                             <option value="Mesin 33">Mesin 33</option>
+                            <option value="Mesin 34">Mesin 34</option>
                         </select>
                     </div>
                     <input type="hidden" name="jenis_pemanggilan" value="Quality Control">
@@ -321,6 +324,7 @@
                             <option value="Mesin 31">Mesin 31</option>
                             <option value="Mesin 32">Mesin 32</option>
                             <option value="Mesin 33">Mesin 33</option>
+                            <option value="Mesin 34">Mesin 34</option>
                         </select>
                     </div>
                     <input type="hidden" name="jenis_pemanggilan" value="Repair Maintenance">
@@ -381,6 +385,7 @@
                             <option value="Mesin 31">Mesin 31</option>
                             <option value="Mesin 32">Mesin 32</option>
                             <option value="Mesin 33">Mesin 33</option>
+                            <option value="Mesin 34">Mesin 34</option>
                         </select>
                     </div>
                     <input type="hidden" name="jenis_pemanggilan" value="Moldshop">
@@ -441,6 +446,7 @@
                             <option value="Mesin 31">Mesin 31</option>
                             <option value="Mesin 32">Mesin 32</option>
                             <option value="Mesin 33">Mesin 33</option>
+                            <option value="Mesin 34">Mesin 34</option>
                         </select>
                     </div>
                     <input type="hidden" name="jenis_pemanggilan" value="Polybox">
@@ -501,6 +507,7 @@
                             <option value="Mesin 31">Mesin 31</option>
                             <option value="Mesin 32">Mesin 32</option>
                             <option value="Mesin 33">Mesin 33</option>
+                            <option value="Mesin 34">Mesin 34</option>
                         </select>
                     </div>
                     <input type="hidden" name="jenis_pemanggilan" value="Engineering">
@@ -601,7 +608,5 @@
         });
     });
 </script>
-
-
 
 @endsection
