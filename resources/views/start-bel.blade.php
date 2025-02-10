@@ -28,11 +28,11 @@
                         utterThis.volume = 1;
 
                         const voices = window.speechSynthesis.getVoices();
-                        const femaleVoice = voices.find(voice =>
-                            voice.lang === 'id-ID' && (voice.name.includes('female') || voice.name.includes('perempuan'))
+                        const maleVoice = voices.find(voice =>
+                            voice.lang === 'id-ID' && (voice.name.includes('male') || voice.name.includes('pria'))
                         );
-                        if (femaleVoice) {
-                            utterThis.voice = femaleVoice;
+                        if (maleVoice) {
+                            utterThis.voice = maleVoice;
                         }
 
                         const synth = window.speechSynthesis;
@@ -50,7 +50,7 @@
                         }
 
                         function speakRepeatedly() {
-                            if (repeatCount < 1) {
+                            if (repeatCount < 3) {
                                 synth.speak(utterThis);
                                 utterThis.onend = () => {
                                     repeatCount++;

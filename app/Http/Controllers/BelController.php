@@ -6,6 +6,7 @@ use App\Events\Panggilan;
 use Illuminate\Http\Request;
 use App\Models\Call;
 use Illuminate\Support\Facades\Log;
+use App\Models\HistoryCall;
 
 class BelController extends Controller
 {
@@ -34,6 +35,7 @@ class BelController extends Controller
 
             // Simpan data ke database
             Call::create($validatedData);
+            HistoryCall::create($validatedData); // Simpan ke histori
 
             $jenis = $request->input('jenis_pemanggilan');
             $nama  = $request->input('nama_mesin');
